@@ -14,7 +14,7 @@ colours are sent to an Arduino and displayed on an
 1. Install the Adafruit DotStar Arduino library and hook up the DotStar strip, as
 explained [here](https://learn.adafruit.com/adafruit-dotstar-leds/arduino-library-installation).
 
-2. Flash the script at [sketch/sktetch.ino](sketch.sketch.ino) to the Arduino.
+2. Flash the script at [sketch/sktetch.ino](sketch/sketch.ino) to the Arduino.
 
 3. Install the required Python packages `pip install -r requirements.txt`.
 
