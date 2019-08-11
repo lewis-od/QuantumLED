@@ -2,7 +2,7 @@
 Generates random quantum state, then maps the argument of each Fock coefficient
 to a colour in RGB space, and saves the result to a file.
 """
-
+import os
 import colorsys
 from typing import Tuple
 import numpy as np
@@ -64,8 +64,18 @@ if __name__ == '__main__':
     # Convert arguments to RGB colours
     colours = list(map(arg_to_colour, args))
 
+    # Construct path to output directory
+    this_dir = os.path.dirname(os.path.abspath(__file__))
+    parent_dir = os.path.join(this_dir, os.pardir)
+    output_dir = os.path.join(parent_dir, "output")
+    # Create output dir if it doesn't exist
+    if not os.path.isdir(output_dir):
+        os.mkdir(output_dir)
+
     # Save arguments and colours to files (args useful for debugging)
-    np.save('colours.npy', colours)
-    print("Colours saved to colours.npy")
-    np.save('state.npy', args)
-    print("State saved to state.npy")
+    colours_fname = os.path.join(output_dir, 'colours.npy')
+    np.save(colours_fname, colours)
+    print("Colours saved to " + os.path.relpath(colours_fname, parent_dir))
+    state_fname = os.path.join(output_dir, 'state.npy')
+    np.save(state_fname, args)
+    print("State saved to " + os.path.relpath(state_fname, parent_dir))

@@ -1,4 +1,5 @@
 """Sends the colours in colours.npy to the Arduino via serial"""
+import os
 import sys
 import time
 import serial
@@ -10,7 +11,11 @@ port = '/dev/cu.usbmodem14201'
 num_using = 10
 
 if __name__ == '__main__':
-    colours = np.load('colours.npy')
+
+    this_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(this_dir, os.pardir, 'output')
+
+    colours = np.load(os.path.join(output_dir, 'colours.npy'))
     # Colours stored as floats in [0, 1]. Convert them to ints in [0, 255]
     colours = np.round(colours * 255).astype(np.int)
     
