@@ -3,7 +3,7 @@ Generates a random quantum state, then displays a visual representation of it
 on an AdaFruit DotStar LED strip using an Arduino.
 
 ## What It Does
-The script at [quantumled/lab.py]() will generate a random
+The script at [quantumled/lab.py](quantumled/lab.py) will generate a random
 [Gaussian State](https://strawberryfields.readthedocs.io/en/latest/conventions/states.html#gaussian-states)
 using [Strawberry Fields](https://strawberryfields.readthedocs.io/en/latest/index.html).
 It then maps the argument of each Fock basis coefficient to a colour. These
@@ -14,7 +14,7 @@ colours are sent to an Arduino and displayed on an
 1. Install the Adafruit DotStar Arduino library and hook up the DotStar strip, as
 explained [here](https://learn.adafruit.com/adafruit-dotstar-leds/arduino-library-installation).
 
-2. Flash the script at [sketch/sktetch.ino]() to the Arduino.
+2. Flash the script at [sketch/sktetch.ino](sketch.sketch.ino) to the Arduino.
 
 3. Install the required Python packages `pip install -r requirements.txt`.
 
