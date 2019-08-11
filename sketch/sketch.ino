@@ -1,5 +1,4 @@
 #include <Adafruit_DotStar.h>
-#include <SPI.h>
 
 #define NUMPIXELS 72 // Number of LEDs in strip
 
