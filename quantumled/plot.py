@@ -10,7 +10,8 @@ if __name__ == '__main__':
 
     # Load output of lab.py
     args = np.load(os.path.join(output_dir, 'state.npy'))
-    colours = np.load(os.path.join(output_dir, 'colours.npy'))
+    colours = np.load(os.path.join(output_dir, 'colours.npy')).astype(np.float64)
+    colours /= 255.0 # matplotlib expects colours in [0,1], not [0, 255]
 
     # Plot coloured bar chart
     plt.bar(range(len(args)), args, color=colours)

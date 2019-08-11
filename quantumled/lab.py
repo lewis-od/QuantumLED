@@ -42,7 +42,12 @@ def arg_to_colour(theta: float) -> Colour:
     """Maps the argument of a complex number to a colour"""
     h = (theta / np.pi) + 1 # Map [-π, π] -> [0, 1] - Hue in HSV space
     h /= 2 # Map [0, 1] -> [0, 0.5] - Better colour map than [0, 1]
-    return colorsys.hsv_to_rgb(h, 1.0, 1.0) # Convert HSV space -> RGB space
+    colour = colorsys.hsv_to_rgb(h, 1.0, 1.0) # Convert HSV space -> RGB space
+
+    # Coloursys returns RGB values as floats in [0, 1]. Convert to ints in [0, 255]
+    colour = tuple(int(np.round(i * 255)) for i in colour)
+
+    return colour
 
 if __name__ == '__main__':
     # TODO: Implement circuits that produce different types of state
