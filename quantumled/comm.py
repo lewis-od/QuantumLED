@@ -20,7 +20,7 @@ if __name__ == '__main__':
     with serial.Serial(port, 9800) as ser:
         # Arduino restarts when a new serial connection is made. Give it time
         # to boot before sending any data
-        time.sleep(0.5)
+        time.sleep(1.5)
         # Send colours to Arduino
         written = ser.write(to_write)
         print("Written {} bytes".format(written))
