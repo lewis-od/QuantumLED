@@ -2,7 +2,7 @@
 #include <SPI.h>
 
 #define NUMPIXELS 72 // Number of LEDs in strip
-#define NUMUSING 10 // Number of LEDs to actually illuminate
+#define NUMUSING 20 // Number of LEDs to actually illuminate
 
 #define DATAPIN 4
 #define CLOCKPIN 5

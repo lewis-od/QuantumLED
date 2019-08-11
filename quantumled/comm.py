@@ -8,7 +8,7 @@ import numpy as np
 # Port of Arduino
 port = '/dev/cu.usbmodem14201'
 # Number of LEDs to illuminate. Must be the same as NUMUSING in sketch/sktch.ino
-num_using = 10
+num_using = 20
 
 if __name__ == '__main__':
 
