@@ -35,3 +35,5 @@ via serial.
 - [ ] Get Arduino to poll web server and update LEDs
 - [ ] Periodically run `lab.py` to generate a new random state
 - [ ] Update `lab.py` to produce different types of state (non-Gaussian ones)
+
+Alternatively: Ditch the Arduino and run everything on a Raspberry Pi
